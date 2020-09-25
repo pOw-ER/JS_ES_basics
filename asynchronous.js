@@ -17,4 +17,4 @@ const third = ()=>{
 first();
 // KONSOLE : first third nach 2 sekunden second
 // asynchronous javascript
-// wenn der computer mit etwas beschäftigt, was etwas dauert, kann gleichzeitig mit anderen Sachen beschäftigen
+// wenn der computer mit etwas beschäftigt ist, was etwas dauern kann, kann er gleichzeitig sich mit anderen Sachen beschäftigen.
