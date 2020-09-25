@@ -16,5 +16,7 @@ const third = ()=>{
 
 first();
 // KONSOLE : first third nach 2 sekunden second
-// asynchronous javascript
+// asynchronous javascript (1- Callback 2- Promise 3- Async/Await)
 // wenn der computer mit etwas beschäftigt ist, was etwas dauern kann, kann er gleichzeitig sich mit anderen Sachen beschäftigen.
+
+
