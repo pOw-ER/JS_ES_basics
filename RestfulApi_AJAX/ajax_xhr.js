@@ -2,18 +2,26 @@
 
 var xhr = new XMLHttpRequest();
 
-xhr.onreadystatechange=function(){ // onreadystatechange bedeutet, wenn auf der Seite sich etwas ändert, sollte diese Funktion funktionieren
-  if(xhr.readyState === 4 && xhr.status===200) {
-    console.log(xhr.responseText);
+xhr.onreadystatechange = function(){ // onreadystatechange bedeutet, wenn auf der Seite sich etwas ändert, sollte diese Funktion funktionieren
+  if(xhr.readyState === 4) {
+    if(xhr.status === 200){
+      console.log(xhr.responseText);
+    }
+    else if (xhr.status===404){
+      console.log('recourses cannot find');
+    }
   }
 };
 
+xhr.onprogress = function (){ // yükelrniken. örnegin server bir yükleme yaparken veya mesgulken loadong ikonu gösterilecegi zaman
+  console.log('on progress');
+}
 // was wollen wir vom SERVER. wenn wir vom Server informationen erhalten wollen, benutzen wir oft GET oder manchmal POST(bei aktualisierung usw).
 // msg.txt (welche Datei wollen wir)
 // true = asynchronous, false = synchronous
 xhr.open('GET','msg.txt',true);
 
-xhr.send();
+xhr.send(); // calismadi hata veriyor !!!
 
 
 
