@@ -37,10 +37,12 @@ function getOne (){
 function getAll (){
   var url ="https://jsonplaceholder.typicode.com/posts";
   var xhr = new XMLHttpRequest();
-
+  var loadImage= document.querySelector('#loading');
+  loadImage.style.display = 'block';
   xhr.open('GET',url,true);
   xhr.onload = function(){
     if(this.status === 200){
+      loadImage.style.display = 'none';
       var posts = JSON.parse(this.responseText);
       var html = "";
       posts.forEach(post => {
@@ -72,10 +74,13 @@ function postData(){
   var json = JSON.stringify(data); // wandeln wir das Objekt zu JSON format um
   var url = "https://jsonplaceholder.typicode.com/posts";
   var xhr = new XMLHttpRequest();
+  var loadImage= document.querySelector('#loading');
+  loadImage.style.display = 'block';
   xhr.open('POST',url,true);
   xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
   xhr.onload = function(){
     if (xhr.status === 201 && xhr.readyState ===4){ // 201 html response code = created
+      loadImage.style.display = 'none';
       var post = xhr.responseText;
       console.log(post);
     }
