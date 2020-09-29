@@ -1,0 +1,21 @@
+{
+  "firstName" : "Enes",
+  "lastName" : "Yilmaz",
+  "age": 30,
+  "required" : false
+}
+
+{
+  "firstName" : "Büsra",
+  "lastName" : "Yilmaz",
+  "age": 30,
+  "required" : false
+},
+
+{
+  "firstName" : "Besime",
+  "lastName" : "Yilmaz",
+  "age": 60,
+  "required" : true
+}
+
