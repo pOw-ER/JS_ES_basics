@@ -29,7 +29,7 @@ new Promise (function(resolve,reject){
 
 const isMomHappy = true;
 
-const willGetNewPhone = new Promise((resolve,reject) => {
+const willGetNewPhone = new Promise((resolve,reject) => { // resolve basarili oldugunda reject basarisiz oldugunda ne yapacagimizi belirten fonksiyonlar
   if (isMomHappy){
     const phone = {
       name : 'IPhone 8',
@@ -49,7 +49,7 @@ const showToFriends = function(phone){
   return Promise.resolve(message);
 }
 
-const askMom = function (){
+const askMom = function (){ // resolve then le reject catch ile cagiriliyor
   willGetNewPhone.then(showToFriends).then(message=>console.log(message)).catch(error=>{
     console.log(error);
   });
