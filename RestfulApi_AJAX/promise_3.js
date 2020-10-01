@@ -28,9 +28,26 @@ let request = obj => {
   });
 }
 
+// request(myObj).then(data=>{
+//   let users = JSON.parse(data);
+//   console.log(users.results);
+// }).catch(error=>{
+//   console.log(error);
+// })
+
 request(myObj).then(data=>{
-  let users = JSON.parse(data);
-  console.log(users.results);
+    let users = JSON.parse(data);
+    let html = "";
+    users.results.forEach(user =>{
+      html +=`
+      <div>
+        <img src="${user.picture.medium}">
+        <div>
+          ${user.name.title} ${user.name.first} ${user.name.last}
+        </div>
+      </div>`
+    })
+    document.querySelector('#users').innerHTML = html;
 }).catch(error=>{
-  console.log(error);
+    console.log(error);
 })
